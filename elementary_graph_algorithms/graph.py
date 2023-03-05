@@ -12,12 +12,14 @@ class Color(enum.Enum):
 
 class Vertex:
 
-    __slots__ = ['name', 'color', 'distance', 'predecessor']
+    __slots__ = ['name', 'color', 'distance',
+                 'start_time', 'finish_time', 'predecessor']
 
     def __init__(self, name, distance=1, color=Color.WHITE):
         self.name = name
         self.distance = distance
         self.color = color
+        self.start_time = self.finish_time = 0
         self.predecessor = None
 
 
