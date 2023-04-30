@@ -3,11 +3,18 @@ from collections import defaultdict
 
 class Vertex:
 
-    __slots__ = ['name', 'predecessor']
+    __slots__ = ['name', 'predecessor', 'key']
 
-    def __init__(self, name):
+    def __init__(self, name, key=0):
         self.name = name
         self.predecessor = None
+        self.key = 0
+
+    def __lt__(self, other):
+        return self.key < other.key
+
+    def __str__(self):
+        return f"{self.name}({self.key})"
 
 
 class Edge:
