@@ -12,6 +12,9 @@ class Vertex:
         self.predecessor = None
         self.distance = sys.maxsize
 
+    def __lt__(self, other):
+        return self.distance < other.distance
+
 
 class Edge:
 
@@ -76,7 +79,7 @@ def trace_vertices(v, s):
     result.append(v)
 
     p = v.predecessor
-    while p and p.predecessor:
+    while p:
         result.append(p)
         p = p.predecessor
 
