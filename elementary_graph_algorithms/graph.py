@@ -14,6 +14,7 @@ class Vertex:
         self.name = name
         self.color = color
         self.distance = 0
+        self.start_time = self.finish_time = 0
         self.predecessor = None
 
 
