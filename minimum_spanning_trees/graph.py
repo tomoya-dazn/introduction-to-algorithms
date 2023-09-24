@@ -10,9 +10,13 @@ class Color(enum.Enum):
 
 class Vertex:
 
-    def __init__(self, name, distance=0):
+    def __init__(self, name, key=0):
         self.name = name
+        self.key = key
         self.predecessor = None
+
+    def __lt__(self, other):
+        return self.key < other.key
 
 
 class Edge:
