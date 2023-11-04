@@ -8,6 +8,9 @@ class Vertex:
         self.distance = 0
         self.predecessor = None
 
+    def __lt__(self, other):
+        return self.distance < other.distance
+
 
 class Edge:
 
